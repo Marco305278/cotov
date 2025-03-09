@@ -2,7 +2,8 @@
   "homepage": "http://marco305278.github.io/cotov",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start"
   },
   "devDependencies": {
     "gh-pages": "^6.3.0"
