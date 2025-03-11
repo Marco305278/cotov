@@ -2,37 +2,27 @@
 import React, { useEffect, useState } from 'react';
 import { getData } from './firebase/firebaseService';
 
-const PageEmpty: React.FC = () => (
-  <div>
-    <h1>Pagina per variabile vuota</h1>
-    <p>La variabile è vuota</p>
-  </div>
-);
-
-const PageNotEmpty: React.FC = () => (
-  <div>
-    <h1>Pagina per variabile non vuota</h1>
-    <p>La variabile contiene un valore</p>
-  </div>
-);
+import Homepage from './components/pages/homepage/homepage';
+import Password from './components/pages/password/password';
 
 const App: React.FC = () => {
   const [startPage, setStartPage] = useState<JSX.Element | null>(null);
 
   const getStartPages = async () => {
     try {
-      // Supponiamo che la variabile si trovi nel percorso "startPage" nel database Firebase
-      const value = await getData('startPage');
-      if (!value) {
-        // Se la variabile è vuota, restituisci PageEmpty
-        setStartPage(<PageEmpty />);
+      // Recupera la variabile "consolepassword" dal database Firebase
+      const consolepassword = await getData('consolepassword');
+      if (!consolepassword) {
+        // Se non c'è una password impostata, mostra direttamente la Homepage
+        setStartPage(<Homepage />);
       } else {
-        // Altrimenti, restituisci PageNotEmpty
-        setStartPage(<PageNotEmpty />);
+        // Altrimenti, mostra la pagina di inserimento password
+        setStartPage(
+          <Password onPasswordValid={() => setStartPage(<Homepage />)} />
+        );
       }
     } catch (error) {
       console.error("Errore nel recupero dei dati da Firebase: ", error);
-      // Puoi gestire l'errore impostando una pagina di errore
       setStartPage(<div>Si è verificato un errore</div>);
     }
   };
@@ -41,11 +31,7 @@ const App: React.FC = () => {
     getStartPages();
   }, []);
 
-  return (
-    <div>
-      {startPage ? startPage : <div>Caricamento...</div>}
-    </div>
-  );
+  return <div>{startPage ? startPage : <div>Caricamento...</div>}</div>;
 };
 
 export default App;

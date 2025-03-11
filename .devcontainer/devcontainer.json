@@ -10,6 +10,9 @@
           "esbenp.prettier-vscode"
         ]
       }
+    },
+    "features": {
+        "ghcr.io/r3dpoint/devcontainer-features/tailwindcss-standalone-cli:1": {}
     }
   }
   
