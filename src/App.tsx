@@ -1,5 +1,5 @@
 // App.tsx
-import React, { useEffect, useState } from 'react';
+import React, { JSX, useEffect, useState } from 'react';
 import { getData } from './firebase/firebaseService';
 
 import Homepage from './components/pages/homepage/homepage';
