@@ -1,6 +1,7 @@
 import './../../../css/basic.css';
 import './homepage.css';
 import LoadComputers from './../../computers/loadComputers'; // Importing LoadComputers
+import Schede from './../../schede/schede'; // Importing Schede
 
 function Homepage() {
   const handleConnect = () => {
@@ -16,20 +17,22 @@ function Homepage() {
   return (
     <div className="w-full h-screen flex flex-col items-center justify-center">
       <LoadComputers />
-        <div className="w-full h-screen flex flex-col items-center justify-center">
-          <div className="w-100 flex flex-col">
-            <div className="w-100 flex justify-between">
+      <div className="w-full h-screen flex flex-col items-center justify-center">
+          <div className="w-85 flex flex-col">
+            <h2 className='mb-3 -mx-3'>- Controllo schermo</h2>
+            <div className="w-85 flex justify-between">
               <button
                 onClick={handleStop}
-                className="hover:bg-red-500 px-4 py-2" >
-                Ferma
+                className="button-destructive px-4 py-2" >
+                Chiudi
               </button>
               <button onClick={handleConnect} >
                 Connettiti
               </button>
             </div>
           </div>
-        </div>
+      </div>
+      <Schede />
     </div>
   );
 }
