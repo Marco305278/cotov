@@ -93,7 +93,7 @@ const LoadComputers: React.FC = () => {
   };
 
   return (
-    <div className='flex'>
+    <div className='flex bg-stone-500/20 bg-blur border-1 border-stone-500/40 p-1 mt-3 rounded-xl'>
       {Array.from({ length: 10 }, (_, index) => {
         const pcNameKey = `pcname${index + 1}`;
         const pcName = connectedPCs[pcNameKey] || pcNameKey;
@@ -102,19 +102,26 @@ const LoadComputers: React.FC = () => {
         const dateKey = `date${index + 1}`;
         const pcDate = pcDates[dateKey] || '';
         const formattedDate = pcDate ? formatDate(pcDate) : '';
+  
+        // Calcola la differenza in secondi tra la data attuale e la data del PC
+        const now = new Date();
+        const pcDateObj = new Date(pcDate);
+        const timeDifference = (now.getTime() - pcDateObj.getTime()) / 1000; // Differenza in secondi
+        const isConnected = timeDifference < 4;
+  
         return (
           <div
             key={pcNameKey}
             onClick={() => handleClick(pcNameKey)}
-            className={`${isFull ? 'flex' : 'hidden'} ${isSelected ? 'selected' : 'notselected'} transition cursor-pointer p-2 px-4 my-4 mx-2`}
+            className={`${isFull ? 'flex' : 'hidden'} ${isSelected ? 'selected' : 'notselected'} ${isConnected ? 'connected' : ''} transition cursor-pointer p-1 px-3 m-1 rounded-md hover:opacity-65`}
           >
             <div>{pcName}</div>
-            <div className='text-gray-400! text-[10px] flex items-end ml-1'>{formattedDate || ''}</div>
+            <div className='text-gray-400! text-[10px] flex items-end ml-1'>{formattedDate}</div>
           </div>
         );
       })}
     </div>
-  );
+  );  
 };
 
 export default LoadComputers;

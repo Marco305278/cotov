@@ -1,6 +1,7 @@
 import './../../../css/basic.css';
 import './homepage.css';
-import LoadComputers from './../../computers/loadComputers'; // Importing LoadComputers
+import LoadComputers from './../../computers/loadComputers';
+import syncAdvice from '../../computers/advise/syncAdvise';
 
 function Homepage() {
   const handleConnect = () => {
@@ -22,11 +23,11 @@ function Homepage() {
             <div className="w-85 flex justify-between">
               <button
                 onClick={handleStop}
-                className="button-destructive px-4 py-2" >
+                className="button-destructive bg-stone-500/20 bg-blur border-1 border-stone-500/40 rounded-lg" >
                 Chiudi
               </button>
-              <button onClick={handleConnect} >
-                Connettiti ora
+              <button onClick={handleConnect} className='bg-stone-500/20 bg-blur border-1 border-stone-500/40 rounded-lg'>
+                Connettiti
               </button>
             </div>
           </div>

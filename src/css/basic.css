@@ -1,14 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
 @import "tailwindcss";
 @import "./buttons.css";
 
+:root {
+    --white: #f1f0E1;
+  }
+
 body{
-    font-family: "Source Code Pro", monospace;
-    background: black url(../assets/back.png);
+    font-family: "DM Mono", monospace;
+    background: #101015 url(../assets/back.png);
     background-size: cover;
     background-position: center;
     overflow-x: hidden;
-    color: white;
+    color: #f1f0E1;
     font-size: 12px;
 }
 
@@ -28,3 +32,18 @@ body{
     background: rgb(27, 36, 25);
     border: 1px solid rgb(64, 83, 63);
 } 
+
+
+.bg-blur{
+    backdrop-filter: blur(15px);
+}
+
+
+.drop-shadow {
+    box-shadow: 0px 0px 10px 1px #101015;
+}
+
+.exit {
+    top: -150px;
+    opacity: none;
+}
