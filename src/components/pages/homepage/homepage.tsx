@@ -1,7 +1,6 @@
 import './../../../css/basic.css';
 import './homepage.css';
 import LoadComputers from './../../computers/loadComputers'; // Importing LoadComputers
-import Schede from './../../schede/schede'; // Importing Schede
 
 function Homepage() {
   const handleConnect = () => {
@@ -27,12 +26,11 @@ function Homepage() {
                 Chiudi
               </button>
               <button onClick={handleConnect} >
-                Connettiti
+                Connettiti ora
               </button>
             </div>
           </div>
       </div>
-      <Schede />
     </div>
   );
 }
