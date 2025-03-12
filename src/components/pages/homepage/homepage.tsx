@@ -1,5 +1,4 @@
 import './../../../css/basic.css';
-import './../../../css/buttons.css';
 import './homepage.css';
 import LoadComputers from './../../computers/loadComputers'; // Importing LoadComputers
 
@@ -22,7 +21,7 @@ function Homepage() {
             <div className="w-100 flex justify-between">
               <button
                 onClick={handleStop}
-                className="bg-red-500:hover px-4 py-2" >
+                className="hover:bg-red-500 px-4 py-2" >
                 Ferma
               </button>
               <button onClick={handleConnect} >

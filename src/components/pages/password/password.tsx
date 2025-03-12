@@ -1,7 +1,6 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
 import { getData } from './../../../firebase/firebaseService';
 import './../../../css/basic.css';
-import './../../../css/buttons.css';
 import './password.css';
 
 interface PasswordProps {

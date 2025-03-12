@@ -2,7 +2,7 @@ button,
 input{
     color: white;
     border: 1px solid white;
-    padding: 12px 18px;
+    padding: 10px 16px;
     transition: 0.15s ease-in-out;
     outline: none!important;
     min-width: 150px;
