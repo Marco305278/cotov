@@ -2,7 +2,7 @@
 import React, { JSX, useEffect, useState } from 'react';
 import { getData } from './firebase/firebaseService';
 
-import Homepage from './components/pages/homepage/homepage';
+import Main from './components/pages/main/main';
 import Password from './components/pages/password/password';
 
 const App: React.FC = () => {
@@ -14,11 +14,11 @@ const App: React.FC = () => {
       const consolepassword = await getData('consolepassword');
       if (!consolepassword) {
         // Se non c'è una password impostata, mostra direttamente la Homepage
-        setStartPage(<Homepage />);
+        setStartPage(<Main />);
       } else {
         // Altrimenti, mostra la pagina di inserimento password
         setStartPage(
-          <Password onPasswordValid={() => setStartPage(<Homepage />)} />
+          <Password onPasswordValid={() => setStartPage(<Main />)} />
         );
       }
     } catch (error) {

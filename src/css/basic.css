@@ -3,14 +3,16 @@
 @import "./buttons.css";
 
 :root {
-    --white: #f1f0E1;
+    --white: #fcfcf6;
   }
 
 body{
     font-family: "DM Mono", monospace;
-    background: #101015 url(../assets/back.png);
+    background: #0b1214 url(../assets/back.png);
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     overflow-x: hidden;
     color: #f1f0E1;
     font-size: 12px;
@@ -25,12 +27,12 @@ body{
     border: 1px solid rgb(100, 100, 100);
 }
 .selected.connected{
-    background: rgba(76, 100, 69, 0.815);
-    border: 1px solid rgba(145, 255, 145, 0.308);
+    background: rgba(69, 100, 74, 0.815);
+    border: 1px solid rgba(145, 255, 176, 0.308);
 }
 .connected{
-    background: rgb(27, 36, 25);
-    border: 1px solid rgb(64, 83, 63);
+    background: rgb(31, 45, 35);
+    border: 1px solid rgb(63, 83, 66);
 } 
 
 

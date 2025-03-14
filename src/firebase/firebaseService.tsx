@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // firebaseService.tsx
 import { database } from "./firebaseConfig";
-import { ref, get, set, push, onValue, DatabaseReference } from "firebase/database";
+import { ref, get, set, push, onValue } from "firebase/database";
 
 /**
  * Funzione per leggere un dato da un percorso specifico nel database.
@@ -38,14 +38,15 @@ export const addData = (path: string, value: any): Promise<void> => {
 
 /**
  * Funzione per ascoltare i cambiamenti in un percorso specifico del database.
+ * @param path - Il percorso nel database da cui ascoltare i dati.
  * @param callback - Funzione da eseguire ogni volta che il dato cambia.
  * @returns Una funzione di unsubscribe per fermare l'ascolto.
  */
 export const listenToData = (
+  path: string,
   callback: (data: any) => void
 ): (() => void) => {
-  const dbRef: DatabaseReference = ref(database);
-  // onValue restituisce una funzione che, quando invocata, rimuove il listener
+  const dbRef = ref(database, path);
   const unsubscribe = onValue(dbRef, (snapshot) => {
     callback(snapshot.val());
   });
