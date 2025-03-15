@@ -36,16 +36,16 @@ function Password({ onPasswordValid }: PasswordProps) {
     <div className="flex flex-col items-center justify-center h-screen">
       <div className='flex items-center mb-5'><div className='bg-white h-[10px] w-[10px] rounded-full'></div><p className="text-center ml-2">Password</p></div>
       <form onSubmit={handleSubmit}>
-        <div className="flex">
+        <div className="flex w-full bg-stone-500/15 bg-blur border-1 border-stone-500/40 p-1 rounded-xl">
           <input
             type="password"
             name="password"
             id="password"
             value={password}
             onChange={handleInputChange}
-            className={`w-full ${ isError ? 'border-red-500! bg-red-900/30!' : '' }`}
+            className={`w-full bg-stone-500/20 bg-blur border-1 border-stone-500/40 rounded-lg ${ isError ? 'border-red-700/50! bg-red-900/30!' : '' }`}
           />
-          <button type="submit" className="hover:cursor-pointer hover:bg-white hover:text-black w-[55px] border border-white">
+          <button type="submit" className="bg-stone-500/20 bg-blur border-1 border-stone-500/40 rounded-lg min-w-1! ml-1 button">
             &gt;
           </button>
         </div>

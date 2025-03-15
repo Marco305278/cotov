@@ -8,7 +8,7 @@
 
 body{
     font-family: "DM Mono", monospace;
-    background: #0b1214 url(../assets/back.png);
+    background: #070909 url(../assets/back.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -19,12 +19,12 @@ body{
 }
 
 .notselected{
-    background: rgb(20, 20, 20);
-    border: 1px solid rgb(85, 85, 85);
+    background: rgb(18, 17, 17);
+    border: 1px solid rgb(84, 82, 79);
 }
 .selected{
-    background: rgb(63, 63, 63);
-    border: 1px solid rgb(100, 100, 100);
+    background: rgb(60, 59, 57);
+    border: 1px solid rgb(99, 96, 94);
 }
 .selected.connected{
     background: rgba(69, 100, 74, 0.815);

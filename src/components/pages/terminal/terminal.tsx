@@ -104,7 +104,7 @@ const Terminal: React.FC = () => {
           onKeyDown={handleKeyDown}
         ></textarea>
         <button
-          className="bg-stone-500/20 bg-blur border-1 border-stone-500/40 rounded-lg min-w-1! ml-1"
+          className="bg-stone-500/20 bg-blur border-1 border-stone-500/40 rounded-lg min-w-1! ml-1 button"
           onClick={sendCommand}
         >
           <p>&#62;</p>

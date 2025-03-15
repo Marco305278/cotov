@@ -138,7 +138,7 @@ const LoadComputers: React.FC = () => {
 
   return (
     <div className='flex w-screen justify-center'>
-      <div className='flex fixed z-50 top-0 bg-stone-500/20 bg-blur border-1 border-stone-500/40 p-1 mt-3 rounded-xl'>
+      <div className='flex fixed z-50 top-0 bg-stone-800/70 bg-blur border-1 border-stone-500/40 p-1 mt-3 rounded-xl'>
         {Array.from({ length: 10 }, (_, index) => {
           const pcNameKey = `pcname${index + 1}`;
           const pcName = connectedPCs[pcNameKey] || pcNameKey;

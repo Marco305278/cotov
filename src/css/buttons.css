@@ -6,8 +6,9 @@ input{
     min-width: 150px;
 }
 
-button:hover {
-    background: var(--white);
+.button:hover {
+    background: rgb(184, 184, 184);
+    border: 1px solid rgb(223, 223, 223);
     color: black;
     cursor: pointer;
 }
@@ -19,5 +20,5 @@ button:hover {
 }
 
 .button:active{
-    opacity: 0.5;
+    transform: scale(0.98);
 }
